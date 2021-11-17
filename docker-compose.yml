@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+ ms-sql-server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment: 
+        ACCEPT_EULA: "Y"
+        SA_PASSWORD: "Password12#"
+    ports:
+        - "1433:1433"
+
+ direct4me:
+    build: .
+    ports:
+        - "8080:80"
+     
